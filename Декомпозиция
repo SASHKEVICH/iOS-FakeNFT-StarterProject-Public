@@ -2,17 +2,6 @@
 Доска: https://github.com/users/SASHKEVICH/projects/3
 Эпик: Статистика
 
-
-
-General:
-
-[Statistic] General: Создать localization.strings - est: 2 часа, fact:
-[Statistic] General: Добавить ЯМ Сервис - est: 30 мин, fact: 
-[Statistic] General: Подумать над шаблонами view - est: 1 час, fact:  
-[Statistic] General: Создать шаблоны view - est: 2 часа, fact:
-[Statistic] General: Написать общий style guide - est: 30 мин, fact:
-[Statistic] General: Разметка событий ЯМ 
-
 MainScreen:
 
 [Statistic] MainScreen: создать таблицу, est: 2 часа, fact:
