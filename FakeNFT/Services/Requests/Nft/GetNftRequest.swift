@@ -4,7 +4,7 @@ struct GetNftRequest: NetworkRequest {
     let nftId: Int
     
     var endpoint: URL? {
-        URL(string: "https://648cbc238620b8bae7ed51a1.mockapi.io/api/v1/nft/\(nftId)")
+        URL(string: "https://648cbc238620b8bae7ed51a1.mockapi.io/api/v1/nft/\(nftId)".localized)
     }
     var httpMethod: HttpMethod {
         .get

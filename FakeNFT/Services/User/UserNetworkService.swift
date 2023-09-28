@@ -1,6 +1,6 @@
 
-class UserNetworkService: UserServiceProtocol {
-    
+final class UserNetworkService: UserServiceProtocol {
+
     private let client = DefaultNetworkClient()
     
     func getUserList(onCompletion: @escaping (Result<[User], Error>) -> Void) {

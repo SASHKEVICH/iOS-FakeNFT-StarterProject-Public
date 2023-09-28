@@ -15,7 +15,7 @@ final class WebsiteProfileViewController: UIViewController {
     
     private lazy var backButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(named: "backIcon"), for: .normal)
+        button.setImage(UIImage(named: "backIcon".localized), for: .normal)
         button.addTarget(self, action: #selector(navigateBack), for: .touchUpInside)
         return button
     }()

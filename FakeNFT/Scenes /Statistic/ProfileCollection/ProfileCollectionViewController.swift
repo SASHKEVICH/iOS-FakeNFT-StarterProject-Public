@@ -11,7 +11,7 @@ final class ProfileCollectionViewController: UIViewController {
 
     lazy var backButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(named: "backIcon"), for: .normal)
+        button.setImage(UIImage(named: "backIcon".localized), for: .normal)
         button.addTarget(self, action: #selector(navigateBack), for: .touchUpInside)
         return button
     }()
@@ -20,7 +20,7 @@ final class ProfileCollectionViewController: UIViewController {
         let label = UILabel()
         label.font = .bodyBold
         label.textColor = .YPBlack
-        label.text = "Коллекция NFT"
+        label.text = "Коллекция NFT".localized
         label.numberOfLines = 1
         label.textAlignment = .center
         return label
@@ -124,7 +124,7 @@ extension ProfileCollectionViewController: UICollectionViewDelegate, UICollectio
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return params.cellHorizontalSpacing
+        params.cellHorizontalSpacing
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -135,8 +135,8 @@ extension ProfileCollectionViewController: UICollectionViewDelegate, UICollectio
 
 extension ProfileCollectionViewController: NftCollectionCellDelegate {
     func onAddToCart(nftName: String) {
-        let alert = UIAlertController(title: "NFT \(nftName) добавлена в корзину", message: nil, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "ОК", style: .default))
+        let alert = UIAlertController(title: "NFT \(nftName) добавлена в корзину".localized, message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "ОК".localized, style: .default))
         present(alert, animated: true)
     }
 }

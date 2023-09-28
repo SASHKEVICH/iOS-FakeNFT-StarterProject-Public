@@ -7,9 +7,9 @@ final class NftCollectionCell: UICollectionViewCell, ReuseIdentifying {
     var nft: Nft? = nil
     
     private let starCount = 5
-    private var isLiked = false
-    
-    private var nftImageView: UIImageView = {
+    lazy var isLiked = false
+
+    lazy var nftImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 12
@@ -18,7 +18,7 @@ final class NftCollectionCell: UICollectionViewCell, ReuseIdentifying {
     
     private var likeButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(named: "likeDisabledIcon"), for: .normal)
+        button.setImage(UIImage(named: "likeDisabledIcon".localized), for: .normal)
         button.addTarget(self, action: #selector(likeTapped), for: .touchUpInside)
         return button
     }()
@@ -60,7 +60,7 @@ final class NftCollectionCell: UICollectionViewCell, ReuseIdentifying {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError("init(coder:) has not been implemented".localized)
     }
     
     func configure(nft: Nft) {
@@ -74,12 +74,12 @@ final class NftCollectionCell: UICollectionViewCell, ReuseIdentifying {
         ratingStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
         for index in 0..<starCount {
             let starImageView = UIImageView()
-            let imageName = nft.rating >= index ? "starIcon" : "starDisabledIcon"
+            let imageName = nft.rating >= index ? "starIcon".localized : "starDisabledIcon".localized
             starImageView.image = UIImage(named: imageName)
             ratingStackView.addArrangedSubview(starImageView)
         }
         
-        nftPriceLabel.text = "\(nft.price) ETH"
+        nftPriceLabel.text = "\(nft.price) ETH".localized
         nftNameLabel.text = nft.name
     }
     
@@ -91,7 +91,7 @@ final class NftCollectionCell: UICollectionViewCell, ReuseIdentifying {
     
     @objc private func likeTapped() {
         isLiked.toggle()
-        let imageName = isLiked ? "likeIcon" : "likeDisabledIcon"
+        let imageName = isLiked ? "likeIcon".localized : "likeDisabledIcon".localized
         likeButton.setImage(UIImage(named: imageName), for: .normal)
     }
     
@@ -142,3 +142,4 @@ final class NftCollectionCell: UICollectionViewCell, ReuseIdentifying {
     }
     
 }
+

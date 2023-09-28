@@ -5,7 +5,7 @@ final class RatingViewController: UIViewController {
     
     private lazy var sortButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(named: "sortIcon"), for: .normal)
+        button.setImage(UIImage(named: "sortIcon".localized), for: .normal)
         button.addTarget(self, action: #selector(sortButtonTapped), for: .touchUpInside)
         return button
     }()

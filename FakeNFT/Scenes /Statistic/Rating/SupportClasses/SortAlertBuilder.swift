@@ -7,16 +7,19 @@ final class SortAlertBuilder {
     static func buildSortAlert(
         onNameSort: @escaping () -> Void,
         onRatingSort: @escaping () -> Void) -> UIAlertController {
-            let sortAlertController = UIAlertController(title: "Сортировка", message: nil, preferredStyle: .actionSheet)
-            
-            sortAlertController.addAction(UIAlertAction(title: "По имени", style: .default) { _ in
+            let sortAlertController = UIAlertController(title: "Сортировка".localized,message: nil, preferredStyle: .actionSheet)
+
+            sortAlertController.addAction(UIAlertAction(title: "По имени".localized,
+                                                        style: .default) { _ in
                 onNameSort()
             })
-            sortAlertController.addAction(UIAlertAction(title: "По рейтингу", style: .default) { _ in
+            sortAlertController.addAction(UIAlertAction(title: "По рейтингу".localized,
+                                                        style: .default) { _ in
                 onRatingSort()
             })
-            sortAlertController.addAction(UIAlertAction(title: "Закрыть", style: .cancel))
-            
+            sortAlertController.addAction(UIAlertAction(title: "Закрыть".localized,
+                                                        style: .cancel))
+
             return sortAlertController
         }
 }

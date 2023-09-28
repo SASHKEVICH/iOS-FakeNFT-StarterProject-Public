@@ -44,7 +44,7 @@ final class RatingProfileViewController: UIViewController {
         button.layer.cornerRadius = 16
         button.layer.borderWidth = 1
         button.layer.borderColor = UIColor.YPBlack.cgColor
-        button.setTitle("Перейти на сайт пользователя", for: .normal)
+        button.setTitle("Перейти на сайт пользователя".localized, for: .normal)
         button.setTitleColor(.YPBlack, for: .normal)
         button.titleLabel?.font = .caption1
         button.addTarget(self, action: #selector(navigateToWebsite), for: .touchUpInside)
@@ -60,7 +60,7 @@ final class RatingProfileViewController: UIViewController {
     
     private lazy var nftCollectionLabel: UILabel = {
         let label = UILabel()
-        label.text = "Коллекция NFT"
+        label.text = "Коллекция NFT".localized
         label.font = .bodyBold
         label.textColor = .YPBlack
         label.numberOfLines = 1
@@ -126,8 +126,8 @@ final class RatingProfileViewController: UIViewController {
         self.user = user
         nameLabel.text = user.name
         descriptionLabel.text = user.description
-        nftCollectionCountLabel.text = "(\(user.nfts.count))"
-        
+        nftCollectionCountLabel.text = "(\(user.nfts.count))".localized
+
         if let url = URL(string: user.avatar) {
             avatarImageView.loadImage(url: url, cornerRadius: 100)
         }
@@ -156,7 +156,7 @@ final class RatingProfileViewController: UIViewController {
         }
         
         if user.nfts.isEmpty {
-            presentErrorDialog(message: "Коллекция пуста")
+            presentErrorDialog(message: "Коллекция пуста".localized)
         } else {
             let vc = ProfileCollectionViewController()
             vc.nftIds = user.nfts.map { Int($0) ?? 0 }
