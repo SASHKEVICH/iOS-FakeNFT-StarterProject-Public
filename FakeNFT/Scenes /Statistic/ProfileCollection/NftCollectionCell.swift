@@ -16,7 +16,7 @@ final class NftCollectionCell: UICollectionViewCell, ReuseIdentifying {
         return imageView
     }()
     
-    private var likeButton: UIButton = {
+    private lazy var likeButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "likeDisabledIcon".localized), for: .normal)
         button.addTarget(self, action: #selector(likeTapped), for: .touchUpInside)
@@ -46,7 +46,7 @@ final class NftCollectionCell: UICollectionViewCell, ReuseIdentifying {
         return label
     }()
     
-    private var addToCartButton: UIButton = {
+    private lazy var addToCartButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "cartIcon"), for: .normal)
         button.addTarget(self, action: #selector(addToCartTapped), for: .touchUpInside)
