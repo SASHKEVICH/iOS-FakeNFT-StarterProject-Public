@@ -31,6 +31,7 @@ final class RatingProfileViewModel {
                 case .failure(let error):
                     self?.errorMessage = error.localizedDescription
                 }
+                
             }
         }
     }
