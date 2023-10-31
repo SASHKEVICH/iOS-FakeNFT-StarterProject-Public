@@ -14,7 +14,7 @@ struct Nft: Codable, Hashable {
             let fmt = NumberFormatter()
             fmt.numberStyle = .currency
             fmt.currencyCode = "ETH"
-            fmt.maximumFractionDigits = 0
+            fmt.maximumFractionDigits = 3
             fmt.locale = Locale(identifier: "ru_RU")
             return fmt
         }()
