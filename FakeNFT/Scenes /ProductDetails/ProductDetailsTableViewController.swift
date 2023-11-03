@@ -14,7 +14,7 @@ final class ProductDetailsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: ProductDetailsTableViewCell = tableView.dequeueReusableCell()
 
-        cell.textLabel?.text = "Ячейка номер \(indexPath.row)"
+        cell.textLabel?.text = "Ячейка номер \(indexPath.row)".localized
 
         return cell
     }
