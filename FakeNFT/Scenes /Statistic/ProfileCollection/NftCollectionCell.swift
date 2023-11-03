@@ -79,7 +79,7 @@ final class NftCollectionCell: UICollectionViewCell, ReuseIdentifying {
             ratingStackView.addArrangedSubview(starImageView)
         }
         
-        nftPriceLabel.text = "\(nft.formattedPrice) ETH".localized
+        nftPriceLabel.text = nft.formattedPrice
         nftNameLabel.text = nft.name
     }
     
